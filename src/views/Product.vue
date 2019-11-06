@@ -45,8 +45,9 @@ export default{
 				id:this.$route.params.id,
 				name: product.data.product_info.name,
 				price:product.data.goods_info[1].price,
+				img:product.data.goods_info[0].img_url,
 				num:1
-			})
+			}),
 			Toast.success('购物车添加成功')
 			
 		},

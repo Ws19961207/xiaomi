@@ -20,6 +20,25 @@
 			 <h3>用户名：殇小妖</h3>
 		 </div>
 	 </div>
+	 <van-collapse v-model="activeNames">
+	   <van-collapse-item title="地址编辑" name="1">
+		   <van-address-edit
+		     :area-list="areaList"
+		     show-postal
+		     show-delete
+		     show-set-default
+		     show-search-result
+		     :search-result="searchResult"
+		     :area-columns-placeholder="['请选择', '请选择', '请选择']"
+		     @save="onSave"
+		     @delete="onDelete"
+		     @change-detail="onChangeDetail"
+		   />
+	   </van-collapse-item>
+	   <van-collapse-item title="标题2" name="2">内容</van-collapse-item>
+	   <van-collapse-item title="标题3" name="3" disabled>内容</van-collapse-item>
+	 </van-collapse>
+	
 	 <div class="address">
 	 	<h3 @click="add">地址编辑</h3>
 	 </div>
@@ -27,7 +46,21 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import { AddressEdit } from 'vant';
+
+Vue.use(AddressEdit);
+	
+	
+	
 export default{
+	  data() {
+	    return {
+	      activeNames: ['1'],
+		  areaList,
+		  searchResult: []
+	    };
+	  },
 	methods:{
 		onClickLeft(){
 			this.$router.go(-1);
@@ -37,6 +70,22 @@ export default{
 		},
 		add(){
 			
+		},
+		onSave() {
+		  Toast('save');
+		},
+		onDelete() {
+		  Toast('delete');
+		},
+		onChangeDetail(val) {
+		  if (val) {
+			this.searchResult = [{
+			  name: '黄龙万科中心',
+			  address: '杭州市西湖区'
+			}];
+		  } else {
+			this.searchResult = [];
+		  }
 		}
 	}
 }
