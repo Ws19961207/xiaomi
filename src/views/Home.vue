@@ -62,7 +62,7 @@
 		
 		<van-swipe :autoplay="3000">
 		  <van-swipe-item v-for="(image, index) in data1.data.data.sections[6].body.items" :key="index">
-		    <img :src="image.img_url_webp" />
+		    <img :src="image.img_url_webp" width="100%"/>
 		  </van-swipe-item>
 		</van-swipe>
 		<van-image

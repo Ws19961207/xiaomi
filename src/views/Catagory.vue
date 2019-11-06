@@ -1,6 +1,6 @@
 <template>
 	<div class="catagory">
-		<div class=:header>
+		<div class="header" >
 			<van-nav-bar title="标题" left-text="返回" left-arrow  @click-left="onClickLeft"  @click-right="onClickRight">
 			  <van-icon name="search" slot="right" />
 			</van-nav-bar>
@@ -28,11 +28,12 @@
 						  </div>
 						  <div v-else-if="item1.view_type=='category_group'">
 							  <!-- {{item1.body.items}} -->
-							  <van-grid :column-num="3" icon_size="57">
+							  <van-grid :column-num="3" icon_size="87">
 								  
 							   <van-grid-item v-for="item2 in item1.body.items" 
 							        :icon="item2.img_url_webp"
 							        :text="item2.product_name"
+									@click="getProduct(item2)"
 							   />
 							  </van-grid>
 						  </div>
@@ -54,11 +55,12 @@ export default{
 	data(){
 		return {
 			catagory:{},
-			activeKey:0
+			activeKey:0,
 		}
 	},
 	created() {
-		this.catagory=catagory
+		this.catagory=catagory,
+		console.log(this.activeKey)
 	},
 	 methods: {
 	    onClickLeft() {
@@ -66,7 +68,10 @@ export default{
 	    },
 	    onClickRight() {
 	      Toast('搜索');
-	    }
+	    },
+		getProduct(item2){
+			this.$router.push(`/product/${item2.action.path}`)
+		}
 	  }
 }
 </script>
