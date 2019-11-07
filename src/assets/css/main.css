@@ -52,3 +52,15 @@
 .content{
 	padding-left: 35px;
 }
+.load{
+	margin-top: 100px;
+	color: red;
+	font-size: large;
+	text-align: center;
+}
+.load1{
+	margin-top: 10px;
+	color: red;
+	font-size: large;
+	text-align: center;
+}

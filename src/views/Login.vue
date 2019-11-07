@@ -22,7 +22,7 @@
 		<div class="content">
 			<van-cell-group>
 			  <van-field
-			    v-model="username"
+			    v-model="user.username"
 			    required
 			    clearable
 			    label="用户名"
@@ -32,7 +32,7 @@
 			  />
 			
 			  <van-field
-			    v-model="password"
+			    v-model="user.password"
 			    type="password"
 			    label="密码"
 			    placeholder="请输入密码"
@@ -47,11 +47,17 @@
 </template>
 
 <script>
+	import Vue from 'vue';
+	import { Toast } from 'vant';
+	
+	Vue.use(Toast);
 	export default{
 		data(){
 			return {
-				username:"",
-				password:""
+				user:{
+					username:"",
+					password:""
+				}
 			}
 		},
 		methods:{
@@ -62,7 +68,33 @@
 				this.$router.push('/');
 			},
 			login(){
-				
+				if(this.user.username==""){
+					Toast('用户名不能为空')
+				}else if(this.user.password==""){
+					Toast('密码不能为空')
+				}else{
+					this.$http({
+						url:'http://www.520mg.com/member/index_login.php',
+						method:"post",
+						data:`fmdo=login&dopost=login&userid=${this.user.username}&pwd=${this.user.password}`
+					}).then((res)=>{
+						console.log(res)
+						if(res.data.status==1){
+							Toast(`${res.data.msg}`)
+							this.$store.commit("setxianshi",true);
+							this.$store.commit("getName",this.user.username);
+							if(this.$route.query.redirect){
+								this.$router.push(this.$route.query.redirect);
+							}else{
+								this.$router.push("/");
+									
+								}
+						}
+						else{
+							Toast(`${res.data.msg}`)
+						}
+					})
+				}
 			}
 		}
 	}
