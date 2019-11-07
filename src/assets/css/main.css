@@ -7,3 +7,48 @@
 .img1{
 	width: 100%;
 }
+.line{
+	
+}
+.mon{
+	height: 30px;
+	line-height: 30px;
+	margin: 0 auto;
+	text-align: center;
+	border-bottom: #00FFFF,2px,solid;
+	padding-top: 10px;
+}
+
+.mon .ic{
+	margin: 0 auto;
+	text-align: center;
+}
+.mon .ic .sp1{
+	top: -10px;
+	font-size: 20px;
+	/* display: block; */
+}
+.bank{
+	height: 200px;
+	text-align: center;
+	margin: 0 auto;
+}
+.pict{
+	padding-top:30px;
+}
+.dic{
+	margin-top: 10px;
+}
+.but0{
+	margin-top: 20px;
+	text-align: center;
+}
+.but{
+	color: white;
+	background-color: #FF6B00;
+	height: 35px;
+	width: 80px;
+}
+.content{
+	padding-left: 35px;
+}

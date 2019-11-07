@@ -20,7 +20,7 @@
 	export default {
 	  data() {
 	    return {
-	      active1:this.$store.state.buttom
+	      active1:0
 	    }
 	  }
 	}

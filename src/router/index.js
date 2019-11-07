@@ -4,7 +4,8 @@ import Home from '../views/Home.vue'
 import Catagory from '../views/Catagory.vue'
 import Product from '../views/Product.vue'
 import Carts from '../views/Carts.vue'
-
+import Login from '../views/Login.vue'
+import Regist from '../views/Regist.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,22 @@ const routes = [
 	meta:{
 		show:true
 	}
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+  	meta:{
+  		show:false
+  	}
+  },
+  {
+    path: '/regist',
+    name: 'regist',
+    component: Regist,
+  	meta:{
+  		show:false
+  	}
   },
   {
     path: '/carts',

@@ -9,83 +9,64 @@
 	  />
 	 <div class="head">
 		 <h3 class="top">我的主页</h3>
-		 <van-image
+		 <van-image  class="touxiang"
 		   round
-		   width="8rem"
-		   height="8rem"
-		   src="../assets/img/cat_cute.gif"
+		   width="6rem"
+		   height="6rem"
+		   src="https://m.mi.com/static/img/avatar.76a75b8f17.png"
 		 />
-		 <!-- <img src="../assets/img/cat_cute.gif" class="touxiang"> -->
-		 <div class="id">
-			 <h3>用户名：殇小妖</h3>
+		 <div>
+			 <span class="mes" @click="login">登录</span> <span></span class="mes"> |  <span></span><span class="mes" @click="regist">注册</span>
 		 </div>
+		
 	 </div>
-	 <van-collapse v-model="activeNames">
-	   <van-collapse-item title="地址编辑" name="1">
-		   <van-address-edit
-		     :area-list="areaList"
-		     show-postal
-		     show-delete
-		     show-set-default
-		     show-search-result
-		     :search-result="searchResult"
-		     :area-columns-placeholder="['请选择', '请选择', '请选择']"
-		     @save="onSave"
-		     @delete="onDelete"
-		     @change-detail="onChangeDetail"
-		   />
-	   </van-collapse-item>
-	   <van-collapse-item title="标题2" name="2">内容</van-collapse-item>
-	   <van-collapse-item title="标题3" name="3" disabled>内容</van-collapse-item>
-	 </van-collapse>
-	
-	 <div class="address">
-	 	<h3 @click="add">地址编辑</h3>
+	 <div class="dingdan">
+		 <van-nav-bar class="ddzj"
+		   left-text="我的订单"
+		   right-text="全部订单"
+		   @click-right="onClickRight"
+		/>
+		 
 	 </div>
+	 <div class="line"><hr color="#D9D9D9"></div>
+	 <div class="mon">
+		 <van-row>
+		   <van-col span="8"><van-icon name="balance-o" class="ic" size="20px"/> </van-col>
+		   <van-col span="8"><van-icon name="logistics" class="ic" size="20px"/></van-col>
+		   <van-col span="8"><van-icon name="paid" class="ic" size="20px"/></van-col>
+		 </van-row>
+		 <van-row>
+		   <van-col span="8"><span class="sp1">待付款</span></van-col>
+		   <van-col span="8"><span class="sp1">待收货</span></van-col>
+		   <van-col span="8"><span class="sp1">退换修</span></van-col>
+		 </van-row>
+	 </div>
+	 <div><hr color="#D9D9D9" ></div>
+		
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import { AddressEdit } from 'vant';
-
-Vue.use(AddressEdit);
-	
-	
 	
 export default{
 	  data() {
 	    return {
-	      activeNames: ['1'],
-		  areaList,
 		  searchResult: []
 	    };
 	  },
 	methods:{
 		onClickLeft(){
 			this.$router.go(-1);
+			// this.$router.go(0);
 		},
 		onClickRight(){
 			this.$router.push("/")
 		},
-		add(){
-			
+		login(){
+			this.$router.push('/login');
 		},
-		onSave() {
-		  Toast('save');
-		},
-		onDelete() {
-		  Toast('delete');
-		},
-		onChangeDetail(val) {
-		  if (val) {
-			this.searchResult = [{
-			  name: '黄龙万科中心',
-			  address: '杭州市西湖区'
-			}];
-		  } else {
-			this.searchResult = [];
-		  }
+		regist(){
+			this.$router.push('/regist')
 		}
 	}
 }
@@ -93,20 +74,18 @@ export default{
 <style scoped="scoped" lang="less">
 	.head{
 		width: 100%;
-		height: 220px;
+		height: 205px;
 		background-color:#FF6B00;
 		text-align: center;
 		.top{
 			padding-top: 20px;
 		}
 		.touxiang{
-			padding-top: 20px;
-			width: 100px;
-			height: 100px;
-			border-radius: 50%;
+			margin-top: 15px;
 		}
-		.address{
-			padding-top: 20px;
+		.mes{
+			color: white;
 		}
 	}
+
 </style>
