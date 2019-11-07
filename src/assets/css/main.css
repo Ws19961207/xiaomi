@@ -6,9 +6,8 @@
 }
 .img1{
 	width: 100%;
-}
-.line{
-	
+	height: 100%;
+	margin-top: -4px;
 }
 .mon{
 	height: 30px;
@@ -63,4 +62,21 @@
 	color: red;
 	font-size: large;
 	text-align: center;
+}
+.comph{
+	background-color: red;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.img1{
+	padding: -5px;
+	margin: 0;
+	padding: 0;
+}
+.van-col{
+	margin-top: -4px;
+}
+*{
+	margin: 0;
+	padding: 0;
 }

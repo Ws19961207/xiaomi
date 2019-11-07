@@ -5,7 +5,7 @@
 	    right-text="首页"
 	    left-arrow
 	    @click-left="onClickLeft"
-	    @click-right="onClickRight"
+	    @click-right1="onClickRight"
 	  />
 	 <div class="head">
 		 <h3 class="top">我的主页</h3>
@@ -30,7 +30,7 @@
 	 </div>
 	 <div class="line"><hr color="#D9D9D9"></div>
 	 <div class="mon">
-		 <van-row>
+		 <van-row >
 		   <van-col span="8"><van-icon name="balance-o" class="ic" size="20px" @click="model"/> </van-col>
 		   <van-col span="8"><van-icon name="logistics" class="ic" size="20px" @click="model"/></van-col>
 		   <van-col span="8"><van-icon name="paid" class="ic" size="20px" @click="model"/></van-col>
@@ -62,6 +62,9 @@ export default{
 		},
 		onClickRight(){
 			this.$router.push("/model")
+		},
+		onClickRight1(){
+			this.$router.push("/")
 		},
 		login(){
 			this.$router.push('/login');

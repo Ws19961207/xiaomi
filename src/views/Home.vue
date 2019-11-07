@@ -48,6 +48,19 @@
 			  <van-col span="12" background-color="red" v-for="item in data.data.data.sections[10].body.items"> <phones :item="item" ></phones></van-col>
 			  <!-- <van-col span="12" background-color="red"><img class="img1" :src="data.data.sections[10].body.items[1].img_url_webp"></van-col>  -->
 			</van-row>
+			<van-row >
+			  <van-col span="12" background-color="red" v-for="item in data.data.data.sections[12].body.items"> <phones :item="item" ></phones></van-col>
+			  <!-- <van-col span="12" background-color="red"><img class="img1" :src="data.data.sections[10].body.items[1].img_url_webp"></van-col>  -->
+			</van-row>
+			<van-row >
+			  <van-col span="12" background-color="red" v-for="item in data.data.data.sections[14].body.items"> <phones :item="item" ></phones></van-col>
+			  <!-- <van-col span="12" background-color="red"><img class="img1" :src="data.data.sections[10].body.items[1].img_url_webp"></van-col>  -->
+			</van-row>
+			<van-row>
+			  <van-col span="24" background-color="red"><img class="img1" :src="data.data.data.sections[16].body.items[0].img_url_webp"></van-col>
+			</van-row>
+			<br>
+			<br>
 	</div>
 	<div class="phone" v-else-if="active==1">
 		<van-image
@@ -70,33 +83,51 @@
 		  style="margin-top: -10px;"
 		  :src="data1.data.data.sections[8].body.items[0].img_url"
 		/>
-		<van-row style="margin-top: -5px;">
+		<van-row style="margin-top: -5px;" class="row1">
 		  <van-col span="8" background-color="red"><img class="img1" :src="data1.data.data.sections[9].body.items[0].img_url_webp"></van-col>
 		  <van-col span="8"><img class="img1" :src="data1.data.data.sections[9].body.items[1].img_url_webp"></van-col>
 		   <van-col span="8"><img class="img1" :src="data1.data.data.sections[9].body.items[2].img_url_webp"></van-col>
 		</van-row>
-		<van-row >
-		  <van-col span="8" background-color="red"><img class="img1" :src="data1.data.data.sections[10].body.items[0].img_url_webp"></van-col>
-		  <van-col span="8"><img class="img1" :src="data1.data.data.sections[10].body.items[1].img_url_webp"></van-col>
-		   <van-col span="8"><img class="img1" :src="data1.data.data.sections[10].body.items[2].img_url_webp"></van-col>
-		</van-row>
-		<van-row >
-		  <van-col span="8" background-color="red"><img class="img1" :src="data1.data.data.sections[11].body.items[0].img_url_webp"></van-col>
-		  <van-col span="8"><img class="img1" :src="data1.data.data.sections[11].body.items[1].img_url_webp"></van-col>
-		   <van-col span="8"><img class="img1" :src="data1.data.data.sections[11].body.items[2].img_url_webp"></van-col>
-		</van-row>
+		<div >
+			<van-row class="row2" style="margin-top: -5px;">
+			  <van-col span="8" background-color="red"><img class="img1" :src="data1.data.data.sections[10].body.items[0].img_url_webp"></van-col>
+			  <van-col span="8"><img class="img1" :src="data1.data.data.sections[10].body.items[1].img_url_webp"></van-col>
+			   <van-col span="8"><img class="img1" :src="data1.data.data.sections[10].body.items[2].img_url_webp"></van-col>
+			</van-row>
+		</div>
+		<div>
+			<van-row class="row3">
+			  <van-col span="8" background-color="red"><img class="img1" :src="data1.data.data.sections[11].body.items[0].img_url_webp"></van-col>
+			  <van-col span="8"><img class="img1" :src="data1.data.data.sections[11].body.items[1].img_url_webp"></van-col>
+			   <van-col span="8"><img class="img1" :src="data1.data.data.sections[11].body.items[2].img_url_webp"></van-col>
+			</van-row>
+		</div>
+		<div>
+			<van-row class="row4">
+			  <van-col span="24"><img class="img1" :src="data1.data.data.sections[12].body.items[0].img_url"></van-col>
+			</van-row>
+		</div>
 		<br>
 		<br>
 		<br>
 		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+		
 	</div>
-	
+	<div class="phone" v-else-if="active==2">
+		<h1>紧张制作中....</h1>
+	</div>
+	<div class="phone" v-else-if="active==3">
+		<h1>紧张制作中....</h1>
+	</div>
+	<div class="phone" v-else-if="active==4">
+		<h1>紧张制作中....</h1>
+	</div>
+	<div class="phone" v-else-if="active==5">
+		<h1>紧张制作中....</h1>
+	</div>
+	<div class="phone" v-else-if="active==6">
+		<h1>紧张制作中....</h1>
+	</div>
 	
   </div>
 </template>

@@ -5,15 +5,16 @@
 	    right-text="首页"
 	    left-arrow
 	    @click-left="onClickLeft"
-	    @click-right="onClickRight"
+	    @click-right="onClickRight1"
 	  />
 	 <div class="head">
 		 <h3 class="top">{{this.$store.state.name}}的个人中心</h3>
 		 <van-image  class="touxiang"
 		   round
+		   fit="cover"
 		   width="6rem"
 		   height="6rem"
-		   src="../assets/img/u=2350302849,3323337377&fm=26&gp=0[1].png"
+		   src="https://img.yzcdn.cn/vant/cat.jpeg"
 		 />
 		 
 		 <div>
@@ -67,6 +68,9 @@ export default{
 		},
 		onClickRight(){
 			this.$router.push("/model")
+		},
+		onClickRight1(){
+			this.$router.push("/")
 		},
 		login(){
 			this.$router.push('/login');

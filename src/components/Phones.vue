@@ -2,13 +2,13 @@
 	<div class="phone">
 		<img :src="item.img_url_webp" style="width: 100%;">
 		<h4>{{ item.product_name }}</h4>
-		<h3>{{ item.product_brief}}</h3>
-		<h3>${{ item.product_brief}}起</h3>
-		<button background-color="orange" >立即购买</button>
+		<h5>{{ item.product_brief}}</h5>
+		<h5>￥{{ item.product_price}}起</h5>
+		<van-button type="danger" size="small">立即购买</van-button>
 		
 	</div>
 	
-</template>
+</template>￥
 
 <script>
 	export default{
@@ -17,10 +17,7 @@
 </script>
 
 <style scope lang="less">
-	*{
-		margin: 0;
-		padding: 0;
-	}
+
 	.phone{
 		margin: 0 auto;
 		text-align: center;
