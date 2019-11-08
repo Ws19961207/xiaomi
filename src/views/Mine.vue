@@ -5,7 +5,7 @@
 	    right-text="首页"
 	    left-arrow
 	    @click-left="onClickLeft"
-	    @click-right1="onClickRight"
+	    @click-right="onClickRight1"
 	  />
 	 <div class="head">
 		 <h3 class="top">我的主页</h3>
@@ -40,19 +40,26 @@
 		   <van-col span="8"><span class="sp1" @click="model">待收货</span></van-col>
 		   <van-col span="8"><span class="sp1" @click="model">退换修</span></van-col>
 		 </van-row>
-		
 	 </div>
 	 <div><hr color="#D9D9D9" ></div>
-		
+		 <van-collapse v-model="activeName" accordion>
+		   <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
+		   <van-collapse-item title="标题2" name="2">内容</van-collapse-item>
+		   <van-collapse-item title="标题3" name="3">内容</van-collapse-item>
+		 </van-collapse>
   </div>
 </template>
 
 <script>
-	
+import Vue from 'vue';
+import { Collapse, CollapseItem } from 'vant';
+
+Vue.use(Collapse).use(CollapseItem);
 export default{
 	  data() {
 	    return {
-		  searchResult: []
+		  searchResult: [],
+		   activeNames: ['1']
 	    };
 	  },
 	methods:{

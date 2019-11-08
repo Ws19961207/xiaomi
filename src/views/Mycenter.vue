@@ -58,7 +58,6 @@ export default{
 	  },
 	methods:{
 		logout(){
-			console.log("+++");
 			this.$store.commit("setxianshi",false);
 			this.$router.push('/')
 		},
